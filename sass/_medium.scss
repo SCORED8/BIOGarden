@@ -1,0 +1,145 @@
+@media (min-width: 768px) {
+  .nav {
+    display: block;
+  }
+
+  .section-heading {
+    width: 600px;
+    font-size: 3rem;
+  }
+
+  .header {
+    height: 95vh;
+
+    &__box {
+      &-text {
+        font-size: 1.7rem;
+        text-align: left;
+        &--left {
+          text-align: left;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 11rem;
+      z-index: 200;
+
+      &-img {
+        position: absolute;
+        display: block;
+        top: 5px;
+        left: -15px;
+        width: 200px;
+        height: 200px;
+        transform: rotate(-45deg);
+        z-index: -1;
+      }
+    }
+  }
+
+  .intro {
+    &__img {
+      max-width: 200px;
+      &--right {
+        top: -250px;
+      }
+
+      &--left {
+        bottom: -250px;
+      }
+    }
+
+    &__block {
+      flex-direction: row;
+      text-align: left;
+      &-icon {
+        &--right {
+          order: 1;
+        }
+      }
+
+      &-content {
+        width: 70%;
+        z-index: 5;
+
+        &--right {
+          text-align: right;
+        }
+      }
+
+      &-title {
+        font-size: 3rem;
+        margin-bottom: 0.3em;
+      }
+
+      &-text {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .services {
+    &__box {
+      flex-direction: row;
+      &-circle {
+        width: 380px;
+        height: 380px;
+
+        &::before {
+          width: 360px;
+          height: 360px;
+        }
+      }
+
+      &-mobile {
+        display: none;
+      }
+
+      &-desc {
+        display: flex;
+        flex-direction: column;
+
+        &--down {
+          order: 0;
+        }
+      }
+    }
+  }
+
+  .experience {
+    &__box {
+      &-switch {
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 25px;
+          height: 25px;
+          margin: 0.5em;
+        }
+
+        &::before {
+          top: 0;
+          left: 0;
+          border-top: 2px solid black;
+          border-left: 2px solid black;
+          border-radius: 12px 0 0 0;
+        }
+        &::after {
+          bottom: 0;
+          right: 0;
+          border-bottom: 2px solid black;
+          border-right: 2px solid black;
+          border-radius: 0 0 12px 0;
+        }
+      }
+    }
+
+    &__panel {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+}

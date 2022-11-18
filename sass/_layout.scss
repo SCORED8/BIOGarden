@@ -1,0 +1,521 @@
+@use "colors" as color;
+
+.nav {
+  position: absolute;
+  width: 100%;
+  padding: 1em;
+  display: none;
+  color: color.$platinum;
+  z-index: 10;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.5rem;
+
+    &-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+
+    &-icon {
+      width: 50px;
+      height: 50px;
+      padding: 0.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: color.$platinum;
+      border: 2px solid color.$platinum;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    &-info {
+      margin-left: 1em;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.5rem;
+
+      span {
+        margin-left: 0.4em;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+section,
+header {
+  position: relative;
+  width: 100%;
+}
+
+.header {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-image: url("../img/sydney-big.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+    z-index: 10;
+
+    &-text {
+      width: 100%;
+      text-align: left;
+      font-size: 1.1rem;
+      color: color.$ash-gray;
+
+      &--left {
+        text-align: left;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin-top: 2em;
+    display: flex;
+    text-transform: uppercase;
+    font-size: 5.5rem;
+    color: color.$cultured;
+    text-shadow: 1px 1px 1px color.$dark-green, 1px 2px 1px color.$dark-green,
+      1px 3px 1px color.$dark-green, 1px 4px 1px color.$dark-green,
+      1px 5px 1px color.$dark-green, 1px 6px 1px color.$dark-green,
+      1px 7px 1px color.$dark-green, 1px 8px 1px color.$dark-green,
+      1px 9px 1px color.$dark-green, 1px 10px 1px color.$dark-green;
+    z-index: 1;
+
+    &-bio {
+      color: color.$mold;
+    }
+
+    &-img {
+      display: none;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    opacity: 0.6;
+  }
+}
+
+.intro {
+  padding: 5em 0;
+  background-color: color.$platinum;
+
+  .wrapper {
+    margin-bottom: 10em;
+  }
+
+  &__img {
+    position: absolute;
+    max-width: 150px;
+    z-index: 100;
+    &--right {
+      top: -200px;
+      right: 0;
+      opacity: 0.9;
+    }
+
+    &--left {
+      bottom: -150px;
+      left: 0;
+      transform: rotateY(180deg) rotateX(180deg);
+      opacity: 0.9;
+    }
+  }
+
+  &__block {
+    position: relative;
+    padding: 3em 1em;
+    margin: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+
+    &-icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-15deg);
+      font-size: 7rem;
+      color: color.$jet;
+      border: 5px solid color.$jet;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    &-content {
+      padding: 0.5em;
+      z-index: 5;
+    }
+
+    &-title {
+      font-size: 2.5rem;
+      margin-bottom: 0.3em;
+    }
+
+    &-text {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.services {
+  padding: 5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/italy-big.jpg);
+  background-size: cover;
+
+  .wave {
+    &--bottom {
+      bottom: -20px;
+    }
+  }
+
+  &__box {
+    position: relative;
+    width: 100%;
+    margin-top: 15em;
+    margin-bottom: 15em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: color.$cultured;
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-circle {
+      position: relative;
+      width: 290px;
+      height: 290px;
+      margin: 3em 0;
+      border: 2px dotted color.$ash-gray;
+      border-radius: 50%;
+      z-index: 5;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 280px;
+        height: 280px;
+        border: 5px solid color.$camel;
+        border-radius: 50%;
+      }
+
+      .blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background-color: color.$mold;
+        opacity: 0.5;
+        filter: blur(25px);
+        z-index: -1;
+      }
+    }
+
+    &-desc {
+      position: relative;
+      margin: 0 5em;
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      &--down {
+        order: 1;
+      }
+    }
+
+    &-btn {
+      position: relative;
+      padding: 1em 3em;
+      background-color: color.$camel;
+      border: 1px solid color.$platinum;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: color.$jet;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    &-icons {
+      position: relative;
+      height: 100px;
+      margin: 0 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+
+      i {
+        margin-bottom: 1em;
+        font-size: 3rem;
+      }
+
+      &--left {
+        &::before {
+          content: "";
+          position: absolute;
+          left: -20px;
+          top: 0;
+          width: 2px;
+          height: 90%;
+          background-color: color.$ash-gray;
+          border-radius: 8px;
+        }
+      }
+
+      &--right {
+        &::before {
+          content: "";
+          position: absolute;
+          right: -20px;
+          top: 0;
+          width: 2px;
+          height: 90%;
+          background-color: color.$ash-gray;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &-heading {
+      font-size: 2rem;
+    }
+
+    &-item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform: rotate(-15deg);
+      }
+    }
+
+    &-mobile {
+      margin-top: 8em;
+      display: flex;
+      flex-direction: row;
+    }
+    &-col {
+      margin: 0 2em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 2rem;
+
+      i {
+        margin-bottom: 0.5em;
+      }
+
+      span {
+        margin-bottom: 3em;
+      }
+    }
+  }
+}
+
+.experience {
+  padding: 5em 0;
+  background-color: color.$hunter-green;
+
+  &__img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: rotateX(180deg);
+    opacity: 0.05;
+  }
+
+  &__box {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5em;
+
+    &-switches {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-switch {
+      position: relative;
+      width: 40%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      background-color: color.$ash-gray;
+      border: 2px solid color.$jet;
+      border-radius: 12px;
+      box-shadow: -5px 5px 5px color.$jet;
+      transition: background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .switch-active {
+      background-color: color.$platinum;
+    }
+
+    &-icon {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: color.$hunter-green;
+      background-color: color.$platinum;
+      border: 2px solid color.$jet;
+      border-radius: 12px;
+      box-shadow: -5px 5px 5px color.$jet;
+    }
+  }
+
+  &__panel {
+    position: relative;
+    padding: 3em 1em;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: color.$platinum;
+    border: 2px solid color.$jet;
+    border-radius: 12px;
+    box-shadow: -5px 5px 5px color.$jet;
+  }
+
+  &__item {
+    width: 300px;
+    height: 450px;
+    margin: 2em 1em;
+    background-color: color.$cultured;
+    border: 1px solid color.$ash-gray;
+    border-radius: 24px;
+    overflow: hidden;
+    &-img {
+      width: 100%;
+    }
+
+    &-content {
+      width: 100%;
+      height: 230px;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    &-btns {
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &-btn {
+      position: relative;
+      width: 200px;
+      height: 50px;
+      text-transform: uppercase;
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: color.$hunter-green;
+      background: none;
+      border: 2px solid color.$hunter-green;
+      border-radius: 24px;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: color.$asparagus;
+        opacity: 0.3;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+        transform-origin: right;
+        z-index: -1;
+      }
+
+      &:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &-text {
+      &-desc {
+        margin-top: 1.5em;
+      }
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: color.$platinum;
+  background-color: color.$jet;
+}

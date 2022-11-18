@@ -1,0 +1,26 @@
+@media (min-width: 1400px) {
+  .header {
+    height: 100vh;
+    &__title {
+      font-size: 15rem;
+    }
+
+    &__box {
+      &-text {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .services {
+    padding: 8em 0;
+    &__box {
+      &-desc {
+        flex-direction: row;
+      }
+      &-icons {
+        margin: 0 1.7em;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+@use "colors" as color;
+
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section-heading {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  padding: 1em;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: color.$platinum;
+  background-color: color.$asparagus;
+  border-radius: 24px;
+}
+
+.image-shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: color.$jet;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.wave {
+  position: absolute;
+  &--bottom {
+    bottom: -10px;
+  }
+
+  &--top {
+    top: -20px;
+  }
+}
+
+.btn-animation {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: color.$ash-gray;
+    opacity: 0.3;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: right;
+    z-index: -2;
+  }
+
+  &:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
